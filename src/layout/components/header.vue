@@ -68,36 +68,22 @@ export default {
       console.log("退出进入登录界面");
       let that = this;
 
-      that.$http.get("plcdata/tems/user/logout").then((res) => {
-        // console.log("退出时返回的什么", res);
-        localStorage.removeItem("permissions");
-        //跳转到登陆页面
-        that.$router.push("/login");
-      });
-
-      ////
-      // that.$http("user/logout", "GET", null, true, function (resp) {
-      //   //退出登陆之后没有必要在storage中保存用户权限，所以删除permissions
+      // that.$http.get("plcdata/tems/user/logout").then((res) => {
+      //   // console.log("退出时返回的什么", res);
       //   localStorage.removeItem("permissions");
       //   //跳转到登陆页面
-      //   that.$router.push("/login");
-      // });
-
-      // that.$store.dispatch("logout").then((res) => {
-      //   //删除Token
-      //   removeToken();
       //   that.$router.push("/login");
       // });
     },
     loadUserInfo() {
       console.log("aaaaa");
       let that = this;
-      that.$http.get("plcdata/tems/user/loadUserInfo").then((res) => {
-        let json = res;
-        let name = json.name;
-        let photo = json.photo;
-        that.name = name;
-      });
+      // that.$http.get("plcdata/tems/user/loadUserInfo").then((res) => {
+      //   let json = res;
+      //   let name = json.name;
+      //   let photo = json.photo;
+      //   that.name = name;
+      // });
     },
     updatePasswordHandle: function () {
       this.updatePasswordVisible = true;

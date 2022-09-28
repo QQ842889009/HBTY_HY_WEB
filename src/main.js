@@ -14,11 +14,11 @@ import wsConnect from "./assets/js/wsNode/wsConnect.js"
 import wsConnectTe from "./assets/js/wsNode/wsConnectTe.js"
 //测试温度控制的开始
 import wsConnectTeCon from "./assets/js/wsNode/wsConnectTeCon.js"
-wsConnectTeCon.wsInit("ws://221.206.242.116:6501") //生产环境2022
+// wsConnectTeCon.wsInit("ws://221.206.242.116:6501") //生产环境2022
 //测试温度控制的结束
-wsConnect.wsInit("ws://182.61.54.22:6510") //模拟数据
+// wsConnect.wsInit("ws://182.61.54.22:6510") //模拟数据
 
-wsConnectTe.wsInit("ws://221.206.242.116:6500") //室内温度最后一次上数据  生产环境
+// wsConnectTe.wsInit("ws://221.206.242.116:6500") //室内温度最后一次上数据  生产环境
 // 引入全局自定义组件
 import "./components/global"
 // 引入全局自定义filters
@@ -64,13 +64,13 @@ new Promise((resolve, reject) => {
   resolve()
 }).then(() => {
   ////生产环境的连接开始
-  socketAiUnit.connected(
-    "http://221.206.242.116:1668/endpoint-websocket-tlgw" //生产环境户阀//
-  )
+  // socketAiUnit.connected(
+  //   "http://221.206.242.116:1668/endpoint-websocket-tlgw" //生产环境户阀//
+  // )
   //换热站的报警
-  socketStationAlarm.connected(
-    "http://221.206.242.116:9001/endpointOyzc" //换热站报警
-  )
+  // socketStationAlarm.connected(
+  //   "http://221.206.242.116:9001/endpointOyzc" //换热站报警
+  // )
   //换热站的报警设置
   // socketStationAlarmSet.connected(
   //   "http://221.206.242.116:9000/tems/publicTagServer" //换热站报警设置
@@ -82,23 +82,23 @@ new Promise((resolve, reject) => {
   //   "http://221.206.242.116:2060/hbty/endpoint-websocket-te" //室内温度的2022生产//生产环境室内温度
   // )
 
-  socketJsControlSx.connected(
-    "http://221.206.242.116:1868/endpoint-websocket-sixin-ml" //四新的气象和热源
-  )
+  // socketJsControlSx.connected(
+  //   "http://221.206.242.116:1868/endpoint-websocket-sixin-ml" //四新的气象和热源
+  // )
 
-  socketStation.connected("http://221.206.242.116:1666/endpoint-websocket") //生产和开发环境的PLC换热站连接不包括热源
+  socketStation.connected("http://222.170.171.158:1666/endpoint-websocket") //生产和开发环境的PLC换热站连接不包括热源
 })
 
 import moment from "moment" //导入时间插件npm install moment –save
 Vue.prototype.$moment = moment //全局注册时间插件
 import "./utils/axios"
 
-Vue.prototype.$http
-  .get("plcdata/tems/plc/stationInfoForBraName")
-  .then((res) => {
-    // console.log('stationBranch---------',res);
-    store.commit("stationBranch/BRANCHINFOS", res)
-  })
+// Vue.prototype.$http
+//   .get("plcdata/tems/plc/stationInfoForBraName")
+//   .then((res) => {
+//     // console.log('stationBranch---------',res);
+//     store.commit("stationBranch/BRANCHINFOS", res)
+//   })
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false

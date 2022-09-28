@@ -28,7 +28,7 @@
         backgroundSize: '100% 100%',
       }"
     >
-      <div class="ttt">友好热力智慧供热管控系统</div>
+      <div class="ttt">华能友好热电智慧供热管控系统</div>
 
       <Sidebar></Sidebar>
       <alarmnum class="alarmnum"></alarmnum>

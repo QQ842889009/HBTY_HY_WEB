@@ -33,7 +33,7 @@ let connectJs = (stompClient) => {
     }
 }
 function connected(url) {
-  console.log()
+  console.log("url", url)
   let timer = setInterval(() => {
     if (heartDog === 1) {
       heartDog = 0

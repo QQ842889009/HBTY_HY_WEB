@@ -62,6 +62,22 @@
           align="center"
         >
         </el-table-column>
+            <el-table-column
+          prop="Sdate"
+          label="更新日期"
+          width="110"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+            <el-table-column
+          prop="Stime"
+          label="更新时间"
+          width="110"
+          fixed
+          align="center"
+        >
+        </el-table-column>
         <el-table-column label="一次网" align="center">
            <el-table-column
           prop="TE11"
@@ -100,16 +116,16 @@
            <el-table-column
           prop="TE21"
           label="供温(℃)"
-          width="65"
+          width="70"
           fixed
           align="center"
         >
         </el-table-column>
-          <el-table-column label="回温(℃)" prop="TE22" width="65">
+          <el-table-column label="回温(℃)" prop="TE22" width="70">
           </el-table-column>
-           <el-table-column label="供压(MPa)" prop="PT21" width="65">
+           <el-table-column label="供压(MPa)" prop="PT21" width="70">
           </el-table-column>
-    <el-table-column label="回压(MPa)" prop="PT22" width="65">
+    <el-table-column label="回压(MPa)" prop="PT22" width="70">
           </el-table-column>
                <el-table-column label="泵前压(MPa)" prop="PT22BF" width="80">
           </el-table-column>
@@ -152,15 +168,170 @@
           </el-table-column>
                    <!-- <el-table-column label="补水后温(℃)" prop="TE22_MP" width="90">
           </el-table-column> -->
-          </el-table-column> 
-          
-          
+  </el-table-column> 
+  <el-table-column label="分支温度(℃)" align="center">
+        <el-table-column
+          prop="TE221"
+          label="一分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+    
+     <el-table-column
+          prop="TE222"
+          label="二分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+
+      
+         <el-table-column
+          prop="TE223"
+          label="三分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+           <el-table-column
+          prop="TE224"
+          label="四分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+           <el-table-column
+          prop="TE225"
+          label="五分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+           <el-table-column
+          prop="TE226"
+          label="六分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+       <el-table-column
+          prop="TE227"
+          label="七分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+           <el-table-column
+          prop="TE228"
+          label="八分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+           <el-table-column
+          prop="TE229"
+          label="九分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+    
+  </el-table-column> 
+   
+             <el-table-column label="分支压力(MPa)" align="center">
+        <el-table-column
+          prop="PT221"
+          label="一分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+    
+     <el-table-column
+          prop="PT222"
+          label="二分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+
+      
+         <el-table-column
+          prop="PT223"
+          label="三分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+           <el-table-column
+          prop="PT224"
+          label="四分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+           <el-table-column
+          prop="PT225"
+          label="五分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+           <el-table-column
+          prop="PT226"
+          label="六分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+       <el-table-column
+          prop="PT227"
+          label="七分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+           <el-table-column
+          prop="PT228"
+          label="八分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+           <el-table-column
+          prop="PT229"
+          label="九分支"
+          width="70"
+          fixed
+          align="center"
+        >
+        </el-table-column>
+    
+  </el-table-column> 
       <!-- <el-table-column label="液位(m)" prop="LT" width="75">
           </el-table-column> -->
 
-          <el-table-column label="瞬时补水量(t/h)" prop="FT31" width="90">
+          <el-table-column label="瞬时补水量(t/h)" prop="FT31" width="105" fixed="right">
           </el-table-column>
-                 <el-table-column label="累计补水量(t)" prop="FT31" width="90">
+                 <el-table-column label="累计补水量(t)" prop="ZFT31" width="105" fixed="right">
           </el-table-column>
 <el-table-column label="状态" align="center"    fixed="right">
            
@@ -298,7 +469,7 @@ export default {
     },
     rePeoplemessageCard(v) {
       // console.log("FFF");
-      this.$router.push({ path: "/Visual6", query: { id: v.Sid } });
+      // this.$router.push({ path: "/Visual6", query: { id: v.Sid } });
     },
     cellStyle({ row, column, rowIndex, columnIndex }) {
       // if (column.property === "line") {

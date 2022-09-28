@@ -74,14 +74,6 @@
             <i class="el-icon-menu"></i>
             <span slot="title">工艺控制</span>
           </el-menu-item>
-          <!-- <el-menu-item
-            index="22"
-            @click="$router.push({ name: 'TeCon' })"
-            ref="ABC"
-          >
-            <i class="el-icon-menu"></i>
-            <span slot="title">温度控制</span>
-          </el-menu-item> -->
         </el-submenu>
         <el-submenu index="历史查询" v-if="uu == 2">
           <template #title>
@@ -383,62 +375,62 @@ export default {
           id: "2",
 
           children: [
-            {
-              name: "热源",
-              id: "21",
-              path: "Hot",
-            },
+            // {
+            //   name: "热源",
+            //   id: "21",
+            //   path: "Hot",
+            // },
             {
               name: "换热站",
               id: "22",
               path: "TabData",
             },
-            {
-              name: "楼宇单元阀",
-              id: "23",
-              path: "AiUnitSx",
-            },
-            {
-              name: "户阀",
-              id: "24",
-              path: "AiDoor",
-            },
-            {
-              name: "室内温度",
-              id: "25",
-              path: "AiInDoor",
-            },
-            {
-              name: "后台系统",
-              id: "26",
-              path: "backStagee",
-            },
+            // {
+            //   name: "楼宇单元阀",
+            //   id: "23",
+            //   path: "AiUnitSx",
+            // },
+            // {
+            //   name: "户阀",
+            //   id: "24",
+            //   path: "AiDoor",
+            // },
+            // {
+            //   name: "室内温度",
+            //   id: "25",
+            //   path: "AiInDoor",
+            // },
+            // {
+            //   name: "后台系统",
+            //   id: "26",
+            //   path: "backStagee",
+            // },
           ],
         },
-        {
-          name: "气象",
-          id: "33",
+        // {
+        //   name: "气象",
+        //   id: "33",
 
-          children: [
-            {
-              name: "气象展示",
-              id: "331",
-              path: "Weather",
-            },
-          ],
-        },
-        {
-          name: "运行分析",
-          id: "44",
+        //   children: [
+        //     {
+        //       name: "气象展示",
+        //       id: "331",
+        //       path: "Weather",
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: "运行分析",
+        //   id: "44",
 
-          children: [
-            {
-              name: "运行分析",
-              id: "441",
-              path: "PowerDissipation",
-            },
-          ],
-        },
+        //   children: [
+        //     {
+        //       name: "运行分析",
+        //       id: "441",
+        //       path: "PowerDissipation",
+        //     },
+        //   ],
+        // },
         // {
         //   name: "后台管理系统",
         //   id: "222",

@@ -173,7 +173,7 @@ export default {
   }, //
   methods: {
     submitForm(formName) {
-      console.log("登录", this.ruleForm);
+      // console.log("登录", this.ruleForm);
       this.$router.push("/layout");
 
       // this.$http.post("plcdata/tems/user/login", this.ruleForm).then((res) => {
@@ -198,36 +198,36 @@ export default {
       //   }
       // });
       // this.$router.push("/layout");
-      this.$wsSendTe("login", {
-        name: "aap" + Math.random() * 100,
+      // this.$wsSendTe("login", {
+      //   name: "aap" + Math.random() * 100,
 
-        password: "HBTYyyds",
-      });
-      this.$wsSend("login", {
-        name: "aa" + Math.random() * 100,
-        // name: "aa",
-        password: "HBTYyyds",
-      }); ///
+      //   password: "HBTYyyds",
+      // });
+      // this.$wsSend("login", {
+      //   name: "aa" + Math.random() * 100,
+      //   // name: "aa",
+      //   password: "HBTYyyds",
+      // }); ///
     },
-    askData() {
-      console.log("********************");
-      // this.infoArr = this.$http.get("plcdata/tems/plc/stationInfo");
-      // this.$store.commit("CC", this.infoArr);
+    // askData() {
+    //   console.log("********************");
+    //   // this.infoArr = this.$http.get("plcdata/tems/plc/stationInfo");
+    //   // this.$store.commit("CC", this.infoArr);
 
-      this.$http({
-        method: "get",
-        url: "plcdata/tems/plc/stationInfo", //
-      })
-        .then((res) => {
-          console.log("接受到的数据plcdata/tems/plc/stationInfo", res);
-          // this.showAlarmHistoryData = res.page.list;
-          // this.totalCount = res.page.totalCount;
-          this.$store.commit("CC", res);
-        })
-        .catch((erroe) => {
-          console.log("发送数据失败");
-        });
-    },
+    //   this.$http({
+    //     method: "get",
+    //     url: "plcdata/tems/plc/stationInfo", //
+    //   })
+    //     .then((res) => {
+    //       console.log("接受到的数据plcdata/tems/plc/stationInfo", res);
+    //       // this.showAlarmHistoryData = res.page.list;
+    //       // this.totalCount = res.page.totalCount;
+    //       this.$store.commit("CC", res);
+    //     })
+    //     .catch((erroe) => {
+    //       console.log("发送数据失败");
+    //     });
+    // },
     resetForm(formName) {
       this.$refs[formName].resetFields();
     },

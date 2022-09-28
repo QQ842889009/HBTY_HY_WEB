@@ -34,7 +34,7 @@ module.exports = {
       "/plcdata": {
         //
 
-        target: "http://221.206.242.116:9000",
+        target: "http://222.170.171.158:9000",
 
         // target: "http://10.168.1.176:9000",
 

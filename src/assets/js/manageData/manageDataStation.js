@@ -256,6 +256,8 @@ let stationData = (msg) => {
     msgJsObjFormat.TE11 = msg.bd6.toFixed(1)
     msgJsObjFormat.TE12 = msg.bd7.toFixed(1)
     msgJsObjFormat.TE21 = msg.bd8.toFixed(1)
+    //msgJsObjFormat.TE21 = msg.bd8 < 0 ? 0 : msg.bd8.toFixed(1)
+
     msgJsObjFormat.TE22 = msg.bd9.toFixed(1)
 
     //msgJsObjFormat.TE22MP = msg.bd10.toFixed(1)
