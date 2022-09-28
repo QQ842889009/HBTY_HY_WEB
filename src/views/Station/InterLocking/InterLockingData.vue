@@ -1,6 +1,5 @@
 <template>
   <div class="husuo">
-    <p>{{ myData[0] }}</p>
     <div class="oneCard" v-for="(station, index) of myData" :key="index">
       <HusuoCard :allData="station" :sid="index" />
     </div>
@@ -35,7 +34,6 @@ export default {
   computed: {
     myData() {
       this.tableData = this.$store.getters.alarmsettings;
-      console.log("ddddd", this.tableData[0]);
       return this.tableData;
     },
   },

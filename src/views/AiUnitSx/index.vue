@@ -318,12 +318,12 @@ export default {
     // top
   }
   .bbb {
-    // position: absolute;
+    position: absolute;
     left: 2px;
   }
 }
 .bbb {
-  //  position: absolute;
+  position: absolute;
   width: 100%;
   height: 100%;
 }

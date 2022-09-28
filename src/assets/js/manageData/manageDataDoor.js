@@ -5,7 +5,7 @@ import moment from "moment"
 
 //Ai单元信息**
 let doorInfos = (msg) => {
-  that.$store.commit("DOORINFO", msg)
+  // that.$store.commit("DOORINFO", msg)
 }
 
 //Ai单元数据的处理
@@ -34,7 +34,7 @@ let doorData = (msg) => {
 
     resolve(msgJsObjFormat)
   }).then((msg) => {
-    that.$store.commit("DOORDATA", msg) //把msg放入仓库
+    // that.$store.commit("DOORDATA", msg) //把msg放入仓库
   })
 }
 

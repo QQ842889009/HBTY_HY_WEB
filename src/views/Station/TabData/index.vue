@@ -1,59 +1,7 @@
 <template>
   <div class="unit-container">
     <div class="condition-box">
-      <!-- <el-form :inline="true" :model="dataForm" ref="dataForm">
-        <el-form-item prop="name" label="">
-          <span>选择位置:</span>
-          <el-cascader
-            :popper-append-to-body="false"
-            v-model="value"
-            :options="options"
-            :props="{ checkStrictly: true }"
-            clearable
-            @change="infoChange"
-          ></el-cascader>
-        </el-form-item>
-        <el-form-item label="">
-          <span>通讯:</span>
-          <el-select
-            v-model="noData"
-            :popper-append-to-body="false"
-            class="input"
-            placeholder="请选择"
-            size="medium"
-            clearable
-            @change="tongxun"
-          >
-            <el-option label="在线" value="0" />
-            <el-option label="离线" value="1" />
-          </el-select>
-        </el-form-item>
-        <el-form-item label="">
-          <span>故障:</span>
-          <el-select
-            v-model="hour2"
-            :popper-append-to-body="false"
-            class="input"
-            placeholder="请选择"
-            size="medium"
-            clearable
-            @change="guzhang"
-          >
-            <el-option label="故障" value="1" />
-            <el-option label="正常" value="0" />
-          </el-select>
-        </el-form-item>
-
-        <el-form-item>
-          <el-button
-            size="medium"
-            icon="el-icon-refresh-left"
-            type="success"
-            @click="exportExcel111('单元箱数据')"
-            >导出报表</el-button
-          >
-        </el-form-item>
-      </el-form> -->
+     
     </div>
 
     <div class="table">
@@ -132,10 +80,18 @@
           </el-table-column>
         <el-table-column label="回压(MPa)" prop="PT12" width="65">
           </el-table-column>
-                 <el-table-column label="流量(t/h)" prop="FT11" width="65">
+                 <el-table-column label="供水流量(t/h)" prop="FT11" width="95">
+          </el-table-column>
+                <el-table-column label="回水流量(t/h)" prop="FT12" width="95">
           </el-table-column>
     
           <el-table-column label="电动阀(%)" prop="FV1FB" width="80">
+          </el-table-column>
+           <el-table-column label="联通阀(%)" prop="XVFB" width="80">
+          </el-table-column>
+           <el-table-column label="定压阀(%)" prop="DVFB" width="80">
+          </el-table-column>
+           <el-table-column label="供水泵(Hz)" prop="BP11FB" width="80">
           </el-table-column>
           </el-table-column>
          
@@ -155,16 +111,18 @@
           </el-table-column>
     <el-table-column label="回压(MPa)" prop="PT22" width="65">
           </el-table-column>
-               <el-table-column label="泵前(MPa)" prop="PT22_BF" width="65">
+               <el-table-column label="泵前压(MPa)" prop="PT22BF" width="80">
           </el-table-column>
     
-          <el-table-column label="泵后压(MPa)" prop="PT22_BL" width="65">
+          <!-- <el-table-column label="泵后压(MPa)" prop="PT22_BL" width="65">
+          </el-table-column> -->
+          <el-table-column label="供水流量(t/h)" prop="FT21" width="95">
           </el-table-column>
-          <el-table-column label="流量(t/h)" prop="FT21" width="65">
+           <el-table-column label="回水流量(t/h)" prop="FT22" width="95">
           </el-table-column>
     
-          <el-table-column label="电动阀(%)" prop="FV2FB" width="80">
-          </el-table-column>
+          <!-- <el-table-column label="电动阀(%)" prop="FV2FB" width="80">
+          </el-table-column> -->
                  <el-table-column label="循环泵(Hz)" prop="BP21FB" width="80">
             <template slot-scope="scope">
               <i
@@ -192,51 +150,20 @@
               {{ scope.row.BP21FB }}
             </template>
           </el-table-column>
-                   <el-table-column label="补水后温(℃)" prop="TE22_MP" width="90">
-          </el-table-column>
+                   <!-- <el-table-column label="补水后温(℃)" prop="TE22_MP" width="90">
+          </el-table-column> -->
           </el-table-column> 
-     <el-table-column label="状态" align="center">
-            <el-table-column label="补水泵" prop="" width="70">
-            <template slot-scope="scope">
-              <i
-                class="el-icon-loading"
-                v-show="scope.row.MP1C && !scope.row.MP1A"
-                style="font-size: 20px; color: #fff; font-weight: 900"
-              ></i>
-              <i
-                class="el-icon-magic-stick"
-                v-show="!scope.row.MP1C && !scope.row.MP1A"
-                style="font-size: 20px; font-weight: 900"
-                :style="{ color: iconColor }"
-              ></i>
-              <i
-                class="el-icon-s-opportunity"
-                v-show="scope.row.MP1A"
-                style="
-                  font-size: 20px;
-                  color: red;
-                  font-weight: 900;
-                  float: right;
-                "
-              ></i>
-            </template>
+          
+          
+      <!-- <el-table-column label="液位(m)" prop="LT" width="75">
+          </el-table-column> -->
+
+          <el-table-column label="瞬时补水量(t/h)" prop="FT31" width="90">
           </el-table-column>
-   
-          <el-table-column label="潜水泵" prop="" width="70">
-            <template slot-scope="scope">
-              <i
-                class="el-icon-loading"
-                v-if="scope.row.MP2S"
-                style="font-size: 20px; color: #fff; font-weight: 900"
-              ></i>
-              <i
-                class="el-icon-magic-stick"
-                v-else
-                style="font-size: 20px; font-weight: 900"
-                :style="{ color: iconColor }"
-              ></i>
-            </template>
+                 <el-table-column label="累计补水量(t)" prop="FT31" width="90">
           </el-table-column>
+<el-table-column label="状态" align="center"    fixed="right">
+           
          
           <el-table-column label="泄压阀" prop="" width="70">
             <template slot-scope="scope">
@@ -253,20 +180,7 @@
               ></i>
             </template>
           </el-table-column>
-          </el-table-column>      
-      <el-table-column label="液位(m)" prop="LT" width="75">
-          </el-table-column>
-
-          <el-table-column label="补水量(m³)" prop="ZFT31" width="90">
-          </el-table-column>
-
-          <el-table-column
-            label="电 能(kWh)"
-            prop="DL"
-            width="95
-          "
-          >
-          </el-table-column>
+          </el-table-column> 
         </el-table-column>
       </el-table>
 
@@ -383,7 +297,7 @@ export default {
       ]);
     },
     rePeoplemessageCard(v) {
-      console.log("FFF");
+      // console.log("FFF");
       this.$router.push({ path: "/Visual6", query: { id: v.Sid } });
     },
     cellStyle({ row, column, rowIndex, columnIndex }) {
@@ -397,7 +311,8 @@ export default {
       for (let i = 0; i < len; i++) {
         //通讯报警行变为灰色
         if (row.Sid == i) {
-          if (this.$store.getters.alarmArr[i] === 1) {
+          //  if (this.$store.getters.alarmArr[i] === 0) {
+          if (this.$store.getters.alarmArrJavaShow[i] === 0) {
             this.isShow = true;
             if (column.property === "Station") {
               // return "  background:#909399!important;height:40px!important;color:#ffffff!important";
@@ -472,7 +387,7 @@ export default {
       //   return "height:5px!important;padding:0px!important;font-weight:bold;border-color:black!important; color:#0000ff!important; padding:0px!important; background:pink;";
       // }
 
-      return "height:4px!important;  padding:1px!important; ;color:#fff; font-family: 'Lao UI'; font-weight: 500;";
+      return "height:4px!important;  padding:10px!important; ;color:#fff; font-family: 'Lao UI'; font-weight: 500;";
     },
     //时间日期格式
     // dateFormat(row, column, cellValue, index) {
@@ -904,7 +819,7 @@ export default {
   }
   .table {
     position: absolute;
-    top: 10px;
+    top: 50px;
     width: 1880px;
     height: 990px;
     // background-color: palevioletred;

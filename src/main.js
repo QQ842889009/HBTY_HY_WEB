@@ -38,7 +38,8 @@ import {
   stationDataInitTemplate,
   stationDataInitTemplateReal,
   doorDataInitTemplate,
-  alarmsettings
+  alarmsettings,
+  alaH
 } from "assets/js/storeDataInitTemplate" //初始化模板
 // console.log("alarmsettings", alarmsettings)
 import socketAiUnit from "assets/js/socketJsControl/socketAiUnit" //改版后的楼宇单元和户阀的连接
@@ -56,6 +57,8 @@ new Promise((resolve, reject) => {
   //store.commit("MUINDOORDATAINIT", inDoorDataInitTemplate) //
   //store.commit("MUDOORDATAINIT", doorDataInitTemplate) //
   store.commit("STATION", stationDataInitTemplate)
+  store.commit("STATIONREAL", stationDataInitTemplateReal)
+  store.commit("ALAH", alaH)
   store.commit("STATIONALARMSET", alarmsettings)
 
   resolve()

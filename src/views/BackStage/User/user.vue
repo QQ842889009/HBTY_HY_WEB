@@ -255,11 +255,11 @@ export default {
   data() {
     return {
       dataForm: {
-        name: null,
-        sex: null,
-        role: null,
-        deptId: null,
-        status: null,
+        name: "",
+        sex: "",
+        role: "",
+        deptId: "",
+        status: "",
       },
       dataList: [],
       roleList: [],
