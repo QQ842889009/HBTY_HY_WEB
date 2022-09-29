@@ -33,7 +33,7 @@ let connectJs = (stompClient) => {
     }
 }
 function connected(url) {
-  console.log()
+  console.log("url", url)
   let timer = setInterval(() => {
     if (heartDog === 1) {
       heartDog = 0
@@ -62,7 +62,7 @@ let socketOnData = (stompClient) => {
     })
 
     stompClient.subscribe("/data/wtOnPlcData", (msg) => {
-      // console.log("--------plc的数据接收-----", msg)
+      //console.log("--------plc的数据接收-----", msg)
       // console.log("1****msg");
       // console.log(msg);
       // console.log(msg.body);
