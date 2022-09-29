@@ -449,6 +449,7 @@ export default {
         .get("/qwer/hotandewather/sixin/getAiUnitInfos") //
         .then((res) => {
           console.log("四新的菜单", res);
+          console.log("四新的菜单", res.community);
           this.options = res.community;
           // this.tableData = res.list;
           // this.totalCount = res.total;

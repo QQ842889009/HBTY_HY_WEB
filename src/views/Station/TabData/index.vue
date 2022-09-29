@@ -329,9 +329,11 @@
       <!-- <el-table-column label="液位(m)" prop="LT" width="75">
           </el-table-column> -->
 
-          <el-table-column label="瞬时补水量(t/h)" prop="FT31" width="105" fixed="right">
+          <el-table-column label="瞬时补水量(t/h)" prop="FT31" width="105" fixed="right" align="center">
           </el-table-column>
-                 <el-table-column label="累计补水量(t)" prop="ZFT31" width="105" fixed="right">
+                 <el-table-column label="累计补水量(t)" prop="ZFT31" width="105" fixed="right" align="center">
+          </el-table-column>
+                 <el-table-column label="电量(kwh)" prop="DL" width="65" fixed="right" align="center">
           </el-table-column>
 <el-table-column label="状态" align="center"    fixed="right">
            

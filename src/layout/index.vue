@@ -28,7 +28,7 @@
         backgroundSize: '100% 100%',
       }"
     >
-      <div class="ttt">华能友好热电智慧供热管控系统</div>
+      <div class="ttt">友好热电智慧供热管控系统</div>
 
       <Sidebar></Sidebar>
       <alarmnum class="alarmnum"></alarmnum>
@@ -158,7 +158,7 @@ export default {
   top: 14px;
   font-size: 30px;
   font-weight: 500;
-  left: 750px;
+  left: 780px;
   color: rgb(14, 218, 24);
   // color: #000;
 }
