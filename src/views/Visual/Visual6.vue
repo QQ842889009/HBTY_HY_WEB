@@ -122,19 +122,50 @@ export default {
           console.log("unity改变一网阀门手自动的值", e.data.msg);
           break;
 
-        //1#循环泵
-        case "BP21SP": //1#循环泵频率给定   二网供水泵给定    1
+        //一网泵
+        case "BP11SP": //1#循环泵频率给定   二网供水泵给定    1
+          this.msg.plcTag = "BP11SP";
+          this.msg.tagValue = e.data.msg;
+          eventName = "/hbty/fySetupPLCA";
+          console.log("unity改变一网泵频率给定的值", e.data.msg);
+          break;
+
+        //二网泵
+        case "BP21SP": //   二网供水泵给定    1
           this.msg.plcTag = "BP21SP";
           this.msg.tagValue = e.data.msg;
           eventName = "/hbty/fySetupPLCA";
-          console.log("unity改变1#循环泵频率给定的值", e.data.msg);
+          console.log("unity改变二网泵频率给定的值", e.data.msg);
           break;
 
-        case "BP21C": //1#循环泵关闭开启     二网供水泵启停    1
+         //一网回水阀门
+         case "DVSP": //   二网供水泵给定    1
+          this.msg.plcTag = "DVSP";
+          this.msg.tagValue = e.data.msg;
+          eventName = "/hbty/fySetupPLCA";
+          console.log("unity改变一网回水阀门给定的值", e.data.msg);
+          break;
+
+         //联通阀
+         case "XVSP": //   联通阀    1
+          this.msg.plcTag = "XVSP";
+          this.msg.tagValue = e.data.msg;
+          eventName = "/hbty/fySetupPLCA";
+          console.log("unity改变联通阀门给定的值", e.data.msg);
+          break;
+
+        case "BP11C": //一网泵关闭开启         1
+          this.msg.plcTag = "BP11C";
+          this.msg.tagValue = e.data.msg;
+          eventName = "/hbty/fySetupPLCB";
+          console.log("unity改变一网泵关闭开启的值", e.data.msg);
+          break;
+
+          case "BP21C": //二网泵关闭开启         1
           this.msg.plcTag = "BP21C";
           this.msg.tagValue = e.data.msg;
           eventName = "/hbty/fySetupPLCB";
-          console.log("unity改变1#循环泵关闭开启的值", e.data.msg);
+          console.log("unity改变二网泵关闭开启的值", e.data.msg);
           break;
 
         //潜水泵
