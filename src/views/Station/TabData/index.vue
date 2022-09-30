@@ -82,12 +82,12 @@
            <el-table-column
           prop="TE11"
           label="供温(℃)"
-          width="65"
+          width="70"
           fixed
           align="center"
         >
         </el-table-column>
-          <el-table-column label="回温(℃)" prop="TE12" width="65" >
+          <el-table-column label="回温(℃)" prop="TE12" width="70" >
           </el-table-column>
            <el-table-column label="供压(MPa)" prop="PT11" width="65">
           </el-table-column>

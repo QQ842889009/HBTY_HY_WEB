@@ -26,7 +26,7 @@
               <span slot="title">数据总览</span>
             </el-menu-item>
           </el-submenu>
-          <!-- <el-submenu index="工艺控制">
+          <el-submenu index="工艺控制">
             <template #title>
               <i class="iconfont icon-kongzhi"></i>
               <span slot="title" class="yy">工艺控制</span>
@@ -39,7 +39,7 @@
               <i class="el-icon-menu"></i>
               <span slot="title">工艺控制</span>
             </el-menu-item>
-          </el-submenu> -->
+          </el-submenu>
           <!-- <el-submenu index="历史查询">
             <template #title>
               <i class="iconfont icon-icon_A3"></i>
