@@ -232,7 +232,10 @@ const stationDataInitTemplateReal = {
   ft11_u: 0,
   ft21_u: 0,
   q1_u: 0,
-  te00: 0
+  te00: 0,
+  ft11_s: 0,
+  ft21_s: 0,
+  q1_s: 0
 }
 const alaH = {
   sid: "占位",

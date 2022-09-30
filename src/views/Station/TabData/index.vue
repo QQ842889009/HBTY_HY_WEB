@@ -471,7 +471,7 @@ export default {
     },
     rePeoplemessageCard(v) {
       // console.log("FFF");
-      // this.$router.push({ path: "/Visual6", query: { id: v.Sid } });
+      this.$router.push({ path: "/Visual6", query: { id: v.Sid } });
     },
     cellStyle({ row, column, rowIndex, columnIndex }) {
       // if (column.property === "line") {
