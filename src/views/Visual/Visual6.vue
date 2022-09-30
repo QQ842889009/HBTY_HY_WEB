@@ -43,7 +43,7 @@ export default {
     //     this.vueSendToUnity("getStationsName",this.stationName);
     // }, 10000);
     window.addEventListener("message", this.unityWatch);
-    console.log("router----", this.$route.query.id);
+    // console.log("router----", this.$route.query.id);
   },
   computed: {
     stationName() {
@@ -76,14 +76,14 @@ export default {
           // msgInfo = this.stationInfos[index];
           var branchMsg = [];
           branchMsg = this.dealBranch(index);
-          // console.log("某个站的信息-=-=-=-", msgInfo);
+          // console.log("某个站的信息-=-=-=-", index);
           setTimeout(() => {
             this.vueSendToUnity("getStationInfos", msgInfo);
             this.vueSendToUnity("getBranchInfo", branchMsg);
           }, 300);
           this.timer = setInterval(() => {
             this.vueSendToUnity("getStationInfos", msgInfo);
-            // console.log("某个站的信息-=-=-=-", msgInfo.FV1SP_H);
+            // console.log("某个站的信息-=-=-=-", msgInfo);
           }, 5000);
           break;
         //一网阀门
@@ -201,58 +201,12 @@ export default {
 
       
 
-        //暂定
-        // case "TE22SP": //二回温度设定           1
-        //   this.msg.plcTag = "TE22SP";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变二回温度设定的值", e.data.msg);
-        //   break;
-
-        // case "TE2XSP": //二均温度设定           1
-        //   this.msg.plcTag = "TE2XSP";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变二均温度设定的值", e.data.msg);
-        //   break;
-        // case "XVSP": //联通阀门开度给定           1
-        //   this.msg.plcTag = "XVSP";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变联通阀门开度给定的值", e.data.msg);
-        //   break;
-        // case "DVSP": //定压阀门开度给定           1
-        //   this.msg.plcTag = "DVSP";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变定压阀门开度给定的值", e.data.msg);
-        //   break;
-        // case "BP11SP": //一网供水泵给定           1
-        //   this.msg.plcTag = "BP11SP";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变一网供水泵给定的值", e.data.msg);
-        //   break;
-        // case "FV_TEX": //一网阀门控温选择           1
-        //   this.msg.plcTag = "FV_TEX";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变一网阀门控温选择的值", e.data.msg);
-        //   break;
-
-        // case "XYVC": //一网供水泵停止         1
-        //   this.msg.plcTag = "BP11C";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCB";
-        //   console.log("unity改变一网供水泵停止的值", e.data.msg);
-        //   break;
-
-
+      
       }
       console.log("发送请求的msg", this.msg);
-      // console.log("发送请求的event",eventName);
+      console.log("发送请求的event",eventName);
       if (this.$stompClient.connected === true) {
-        // console.log("发送数据成化")
+        console.log("发送数据成化")
         this.$stompClient.send(eventName, {}, JSON.stringify(this.msg));
       }
     },
