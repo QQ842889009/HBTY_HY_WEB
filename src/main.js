@@ -94,9 +94,9 @@ Vue.prototype.$moment = moment //全局注册时间插件
 import "./utils/axios"
 
 Vue.prototype.$http
-  .get("plcdata/tems/plc/stationInfoForBraName")
+  .get("plcdata//youhao/stationInfo/stationInfoForBraName")
   .then((res) => {
-    // console.log('stationBranch---------',res);
+    console.log('stationBranch---------',res);
     store.commit("stationBranch/BRANCHINFOS", res)
   })
 Vue.use(ElementUI)

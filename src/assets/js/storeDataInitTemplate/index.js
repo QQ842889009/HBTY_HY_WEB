@@ -63,7 +63,7 @@ const stationDataInitTemplate = {
   PT21: 0,
   PT22: 0,
   PT11_FV: 0,
-  PT22_BF: 0,
+  PT22BF: 0,
 
   FV1FB: 0,
   XVFB: 0,

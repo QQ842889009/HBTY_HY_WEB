@@ -66,6 +66,7 @@ export default {
           } else {
             this.vueSendToUnity("getRouteId", this.$route.query.id);
           }
+      
           break;
         case "stationInfo": //自己定义的事件，代表站的数据,接受的是unity发过来的换热站id
           this.msg.sid = e.data.msg;
@@ -168,85 +169,7 @@ export default {
           console.log("unity改变二网泵关闭开启的值", e.data.msg);
           break;
 
-        //潜水泵
-        // case "LT_LL": //潜水泵液位低低
-        //   this.msg.plcTag = "LT_LL";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变潜水泵液位低低的值", e.data.msg);
-        //   break;
-
-        // case "LT_H": //停泵液位
-        //   this.msg.plcTag = "LT_H";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变停泵液位的值", e.data.msg);
-        //   break;
-
-        // case "LT_L": //起泵液位
-        //   this.msg.plcTag = "LT_L";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变起泵液位的值", e.data.msg);
-        //   break;
-
-        // case "MP2C": //潜水泵关闭开启
-        //   this.msg.plcTag = "MP2C";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCB";
-        //   console.log("unity改变潜水泵关闭开启的值", e.data.msg);
-        //   break;
-
-        // case "MA_SBP": //潜水泵手动自动
-        //   this.msg.plcTag = "MA_SBP";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCB";
-        //   console.log("unity改变潜水泵手动自动的值", e.data.msg);
-        //   break;
-
-        //1#补水泵
-        // case "MP1SP": //1#补水泵频率给定
-        //   this.msg.plcTag = "MP1SP";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变1#补水泵频率给定的值", e.data.msg);
-        //   break;
-
-        // case "PT22SP_H": //1#补水泵停泵高限
-        //   this.msg.plcTag = "PT22SP_H";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变1#补水泵停泵高限的值", e.data.msg);
-        //   break;
-
-        // case "PT22SP_L": //1#补水泵起泵低限
-        //   this.msg.plcTag = "PT22SP_L";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变1#补水泵起泵低限的值", e.data.msg);
-        //   break;
-
-        // case "PT22SP_HH": //压力高高
-        //   this.msg.plcTag = "PT22SP_HH";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变压力高高的值", e.data.msg);
-        //   break;
-
-        // case "MP1C": //1#补水泵关闭开启
-        //   this.msg.plcTag = "MP1C";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCB";
-        //   console.log("unity改变1#补水泵关闭开启的值", e.data.msg);
-        //   break;
-
-        // case "MA_MP": //1#补水泵手动自动
-        //   this.msg.plcTag = "MA_MP";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCB";
-        //   console.log("unity改变1#补水泵手动自动的值", e.data.msg);
-        //   break;
-
+       
         //泄压阀
         case "PT22XY_H": //开阀压力           1
           this.msg.plcTag = "PT22XY_H";
@@ -276,60 +199,53 @@ export default {
           console.log("unity改变泄压阀手动自动的值", e.data.msg);
           break;
 
-        //二网阀门
-        // case "FV2SP": //阀门给定
-        //   this.msg.plcTag = "FV2SP";
-        //   this.msg.tagValue = e.data.msg;
-        //   eventName = "/hbty/fySetupPLCA";
-        //   console.log("unity改变阀门给定的值", e.data.msg);
-        //   break;
-
+      
 
         //暂定
-        case "TE22SP": //二回温度设定           1
-          this.msg.plcTag = "TE22SP";
-          this.msg.tagValue = e.data.msg;
-          eventName = "/hbty/fySetupPLCA";
-          console.log("unity改变二回温度设定的值", e.data.msg);
-          break;
+        // case "TE22SP": //二回温度设定           1
+        //   this.msg.plcTag = "TE22SP";
+        //   this.msg.tagValue = e.data.msg;
+        //   eventName = "/hbty/fySetupPLCA";
+        //   console.log("unity改变二回温度设定的值", e.data.msg);
+        //   break;
 
-        case "TE2XSP": //二均温度设定           1
-          this.msg.plcTag = "TE2XSP";
-          this.msg.tagValue = e.data.msg;
-          eventName = "/hbty/fySetupPLCA";
-          console.log("unity改变二均温度设定的值", e.data.msg);
-          break;
-        case "XVSP": //联通阀门开度给定           1
-          this.msg.plcTag = "XVSP";
-          this.msg.tagValue = e.data.msg;
-          eventName = "/hbty/fySetupPLCA";
-          console.log("unity改变联通阀门开度给定的值", e.data.msg);
-          break;
-        case "DVSP": //定压阀门开度给定           1
-          this.msg.plcTag = "DVSP";
-          this.msg.tagValue = e.data.msg;
-          eventName = "/hbty/fySetupPLCA";
-          console.log("unity改变定压阀门开度给定的值", e.data.msg);
-          break;
-        case "BP11SP": //一网供水泵给定           1
-          this.msg.plcTag = "BP11SP";
-          this.msg.tagValue = e.data.msg;
-          eventName = "/hbty/fySetupPLCA";
-          console.log("unity改变一网供水泵给定的值", e.data.msg);
-          break;
-        case "FV_TEX": //一网阀门控温选择           1
-          this.msg.plcTag = "FV_TEX";
-          this.msg.tagValue = e.data.msg;
-          eventName = "/hbty/fySetupPLCA";
-          console.log("unity改变一网阀门控温选择的值", e.data.msg);
-          break;
+        // case "TE2XSP": //二均温度设定           1
+        //   this.msg.plcTag = "TE2XSP";
+        //   this.msg.tagValue = e.data.msg;
+        //   eventName = "/hbty/fySetupPLCA";
+        //   console.log("unity改变二均温度设定的值", e.data.msg);
+        //   break;
+        // case "XVSP": //联通阀门开度给定           1
+        //   this.msg.plcTag = "XVSP";
+        //   this.msg.tagValue = e.data.msg;
+        //   eventName = "/hbty/fySetupPLCA";
+        //   console.log("unity改变联通阀门开度给定的值", e.data.msg);
+        //   break;
+        // case "DVSP": //定压阀门开度给定           1
+        //   this.msg.plcTag = "DVSP";
+        //   this.msg.tagValue = e.data.msg;
+        //   eventName = "/hbty/fySetupPLCA";
+        //   console.log("unity改变定压阀门开度给定的值", e.data.msg);
+        //   break;
+        // case "BP11SP": //一网供水泵给定           1
+        //   this.msg.plcTag = "BP11SP";
+        //   this.msg.tagValue = e.data.msg;
+        //   eventName = "/hbty/fySetupPLCA";
+        //   console.log("unity改变一网供水泵给定的值", e.data.msg);
+        //   break;
+        // case "FV_TEX": //一网阀门控温选择           1
+        //   this.msg.plcTag = "FV_TEX";
+        //   this.msg.tagValue = e.data.msg;
+        //   eventName = "/hbty/fySetupPLCA";
+        //   console.log("unity改变一网阀门控温选择的值", e.data.msg);
+        //   break;
 
-        case "XYVC": //一网供水泵停止         1
-          this.msg.plcTag = "BP11C";
-          this.msg.tagValue = e.data.msg;
-          eventName = "/hbty/fySetupPLCB";
-          console.log("unity改变一网供水泵停止的值", e.data.msg);
-          break;
+        // case "XYVC": //一网供水泵停止         1
+        //   this.msg.plcTag = "BP11C";
+        //   this.msg.tagValue = e.data.msg;
+        //   eventName = "/hbty/fySetupPLCB";
+        //   console.log("unity改变一网供水泵停止的值", e.data.msg);
+        //   break;
 
 
       }
